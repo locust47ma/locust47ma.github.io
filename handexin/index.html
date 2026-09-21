@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩德馨 - 学术成就与文学创作专题站</title>
+    <meta name="description" content="韩德馨学术成就专题页面，收录韩德馨先生生平简介、学术贡献、文学创作作品及研究文献，展现其在语言文学领域的深厚造诣。">
+    <meta name="keywords" content="韩德馨, 韩德馨生平, 韩德馨学术成就, 韩德馨文学创作, 中国现当代文学, 民间文学">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --font-main: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(44, 62, 80, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Biography Section */
+        .biography {
+            padding: 5rem 0;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .bio-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .bio-img-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #dcdcdc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .bio-info {
+            padding: 2rem;
+        }
+
+        .bio-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .info-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .info-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1rem;
+        }
+
+        /* Achievements Section */
+        .achievements {
+            background-color: var(--light-bg);
+            padding: 5rem 0;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .achievement-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Works Section */
+        .works {
+            padding: 5rem 0;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-item {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .work-cover {
+            height: 320px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            position: relative;
+        }
+        
+        .work-cover::before {
+            content: '出版物封面占位';
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .work-details {
+            padding: 1.5rem;
+        }
+
+        .work-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .work-meta {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 1rem;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Academic Focus Section */
+        .academic-focus {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 5rem 0;
+        }
+
+        .focus-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .focus-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .focus-text p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .focus-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .focus-list li::before {
+            content: '✔';
+            margin-right: 0.8rem;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            margin: 0 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .bio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .focus-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">韩<span>德馨</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#bio">生平简介</a></li>
+                    <li><a href="#achievements">学术成就</a></li>
+                    <li><a href="#works">著作目录</a></li>
+                    <li><a href="#research">研究方向</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>韩德馨</h1>
+                <p>著名的中国现当代文学专家、教育家，致力于中国民间文学与现当代文学研究，桃李满天下。</p>
+                <div class="hero-tags">
+                    <span class="tag">教育家</span>
+                    <span class="tag">民间文学</span>
+                    <span class="tag">中国现当代文学</span>
+                    <span class="tag">学者</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="bio" class="biography">
+            <div class="container">
+                <h2 class="section-title">生平简介</h2>
+                <div class="bio-grid">
+                    <div class="bio-card">
+                        <div class="bio-img-placeholder">
+                            <span>韩德馨先生肖像</span>
+                        </div>
+                    </div>
+                    <div class="bio-info">
+                        <h3>学者风范，育人无数</h3>
+                        <p>韩德馨先生（1917—2001）是中国著名的现当代文学专家、教育家。他一生致力于中国现当代文学的教学与研究工作，尤其在民间文学与现当代文学的关系研究上造诣颇深。</p>
+                        <ul class="info-list">
+                            <li><strong>籍贯：</strong>江苏盐城</li>
+                            <li><strong>出生：</strong>1917年</li>
+                            <li><strong>逝世：</strong>2001年</li>
+                            <li><strong>学术领域：</strong>中国现当代文学、民间文学</li>
+                            <li><strong>主要职务：</strong>南京大学中文系教授、博士生导师</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="achievements">
+            <div class="container">
+                <h2 class="section-title">学术成就</h2>
+                <div class="achievements-grid">
+                    <article class="achievement-card">
+                        <div class="achievement-icon">📚</div>
+                        <h3>学科建设</h3>
+                        <p>韩德馨先生在南京大学中文系担任教授期间，为中国现当代文学学科的建立与发展做出了重要贡献，培养了大批文学研究人才。</p>
+                    </article>
+                    <article class="achievement-card">
+                        <div class="achievement-icon">🔍</div>
+                        <h3>民间文学研究</h3>
+                        <p>他深入研究中国民间文学与现当代文学的关系，指出民间文学是现当代文学的重要源头之一，为文学史研究提供了新的视角。</p>
+                    </article>
+                    <article class="achievement-card">
+                        <div class="achievement-icon">🎓</div>
+                        <h3>人才培养</h3>
+                        <p>作为博士生导师，韩德馨先生治学严谨，为人师表，指导了众多硕士和博士研究生，许多学生已成为各自领域的骨干力量。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="works">
+            <div class="container">
+                <h2 class="section-title">主要著作</h2>
+                <div class="works-grid">
+                    <div class="work-item">
+                        <div class="work-cover"></div>
+                        <div class="work-details">
+                            <h4>中国现代文学史</h4>
+                            <div class="work-meta">主编 · 高等教育出版社</div>
+                            <a href="#" class="btn-outline">查看详情</a>
+                        </div>
+                    </div>
+                    <div class="work-item">
+                        <div class="work-cover"></div>
+                        <div class="work-details">
+                            <h4>中国现代文学史资料汇编</h4>
+                            <div class="work-meta">主编 · 江苏人民出版社</div>
+                            <a href="#" class="btn-outline">查看详情</a>
+                        </div>
+                    </div>
+                    <div class="work-item">
+                        <div class="work-cover"></div>
+                        <div class="work-details">
+                            <h4>中国民间文学史</h4>
+                            <div class="work-meta">合著 · 江苏教育出版社</div>
+                            <a href="#" class="btn-outline">查看详情</a>
+                        </div>
+                    </div>
+                    <div class="work-item">
+                        <div class="work-cover"></div>
+                        <div class="work-details">
+                            <h4>中国现当代文学论集</h4>
+                            <div class="work-meta">韩德馨论文集</div>
+                            <a href="#" class="btn-outline">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="academic-focus">
+            <div class="container focus-container">
+                <div class="focus-text">
+                    <h2>学术贡献与研究重点</h2>
+                    <p>韩德馨先生的学术研究紧扣时代脉搏，关注文学与社会的互动关系。他主张将民间文学的研究方法引入现当代文学史的研究中，强调文学的大众性特征。</p>
+                    <p>其代表作《中国现代文学史》不仅系统梳理了现代文学的发展脉络，更注重挖掘文学现象背后的社会文化根源，具有很高的学术价值和历史意义。</p>
+                    <ul class="focus-list">
+                        <li>现当代文学史料的整理与考辨</li>
+                        <li>民间文学与现当代文学的互动研究</li>
+                        <li>鲁迅及其他现代文学大家的思想研究</li>
+                        <li>文学史观的创新与阐释</li>
+                    </ul>
+                </div>
+                <div class="focus-image">
+                    <!-- Placeholder for academic context image -->
+                    <div style="background-color: rgba(255,255,255,0.1); height: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                        <span style="opacity: 0.5;">学术研究场景</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">版权声明</a>
+                <a href="#">联系方式</a>
+            </div>
+            <p>&copy; 2023 韩德馨学术专题站. 保留所有权利. 本站内容仅供学术参考与纪念。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
