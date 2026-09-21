@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="人人通.云教学平台 - 专为中小学打造的数字化校园解决方案，提供在线备课、智能作业、家校互动及教学数据分析服务。">
+    <meta name="keywords" content="人人通.云教学平台,云课堂,在线教学,智慧校园,教育信息化">
+    <title>人人通.云教学平台 - 智慧校园数字化解决方案</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --accent-color: #3b82f6;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            color: var(--text-main);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Platform Preview Section */
+        .preview-section {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .preview-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .preview-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .preview-content p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .preview-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .check-icon {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .preview-image {
+            background-color: #fff;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .preview-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            opacity: 0.9;
+        }
+
+        /* Use Cases */
+        .use-cases {
+            padding: 80px 0;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .case-card {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .case-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .case-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .case-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: white;
+        }
+
+        .case-overlay h3 {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        .case-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 15px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h4 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .preview-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                人人通<span>.云教学平台</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#features">功能特色</a>
+                <a href="#solutions">应用场景</a>
+                <a href="#safety">安全保障</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">免费试用</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>构建数字化智慧校园，让教学更高效</h1>
+                <p>人人通.云教学平台致力于为中小学提供一站式在线教学解决方案，涵盖备课、授课、作业、评价及家校互动全流程，助力教育信息化2.0发展。</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">立即开始使用</a>
+                    <a href="#features" class="btn btn-outline">了解平台功能</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>全方位教学支持体系</h2>
+                    <p>从课前准备到课后反馈，全流程数字化管理，释放教师精力，提升教学质量。</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>云端备课资源</h3>
+                        <p>海量优质课件、教案与习题库，支持云端存储与多端同步，随时调用教学素材。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🖥️</div>
+                        <h3>互动直播课堂</h3>
+                        <p>高清流畅的直播教学体验，支持屏幕共享、电子白板、在线答题及实时互动功能。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>智能作业批改</h3>
+                        <p>支持拍照上传作业，AI辅助批改客观题，减轻教师重复性工作负担，反馈更及时。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>学情数据分析</h3>
+                        <p>自动生成班级与个人学习报告，可视化图表展示知识点掌握情况，精准辅导。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>家校互联平台</h3>
+                        <p>打破沟通壁垒，家长可实时查看孩子作业、成绩及在校动态，形成家校共育合力。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>安全稳定架构</h3>
+                        <p>采用私有化部署与多重加密技术，确保教育数据隐私安全，符合国家网络安全标准。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>1000+</h3>
+                        <p>合作学校</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50万+</h3>
+                        <p>活跃师生</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99.9%</h3>
+                        <p>服务可用性</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>技术支持</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="preview-section" id="solutions">
+            <div class="container">
+                <div class="preview-layout">
+                    <div class="preview-content">
+                        <h2>适配不同教学场景</h2>
+                        <p>无论您是日常课堂教学、远程在线教学，还是课后辅导与自习，人人通.云教学平台都能灵活适配，满足多样化的教育需求。</p>
+                        <ul class="preview-list">
+                            <li><span class="check-icon">✓</span> 课堂讲授：支持大屏投屏与多屏互动</li>
+                            <li><span class="check-icon">✓</span> 在线答疑：即时语音与文字交流</li>
+                            <li><span class="check-icon">✓</span> 资源分享：一键推送微课视频与文档</li>
+                            <li><span class="check-icon">✓</span> 课后复习：错题本自动归纳与推送</li>
+                        </ul>
+                        <br>
+                        <a href="#" class="btn btn-primary">查看应用案例</a>
+                    </div>
+                    <div class="preview-image">
+                        <!-- Placeholder for UI Mockup -->
+                        <img src="https://picsum.photos/seed/edutech/600/400.jpg" alt="云教学平台界面演示">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="use-cases">
+            <div class="container">
+                <div class="section-title">
+                    <h2>典型应用场景</h2>
+                    <p>覆盖K12全学段，满足各类教研与教学管理需求。</p>
+                </div>
+                <div class="case-grid">
+                    <div class="case-card">
+                        <img src="https://picsum.photos/seed/classroom/400/300.jpg" alt="智慧课堂">
+                        <div class="case-overlay">
+                            <h3>智慧课堂教学</h3>
+                            <p>打造沉浸式互动课堂体验</p>
+                        </div>
+                    </div>
+                    <div class="case-card">
+                        <img src="https://picsum.photos/seed/teacher/400/300.jpg" alt="教师备课">
+                        <div class="case-overlay">
+                            <h3>教师集体备课</h3>
+                            <p>跨区域教研协作与资源共享</p>
+                        </div>
+                    </div>
+                    <div class="case-card">
+                        <img src="https://picsum.photos/seed/study/400/300.jpg" alt="学生自学">
+                        <div class="case-overlay">
+                            <h3>学生自主学习</h3>
+                            <p>个性化学习路径与进度追踪</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">人人通.云教学平台需要安装客户端吗？</div>
+                        <div class="faq-answer">平台支持PC端、Web端及移动端（APP）多终端访问，教师和学生可根据需要选择合适的终端进行登录使用。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">数据安全如何保障？</div>
+                        <div class="faq-answer">我们采用银行级加密技术存储数据，支持私有化部署方案，确保教学数据仅在学校内部流转，符合教育行业数据合规要求。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">是否支持与现有的教务系统对接？</div>
+                        <div class="faq-answer">平台具备完善的API接口，支持与学校现有的学籍管理、排课系统及OA系统进行数据对接，实现信息互通。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何开始使用平台？</div>
+                        <div class="faq-answer">学校管理员可联系官方客服申请开通试用账号，管理员配置完成后，师生即可通过统一账号登录使用。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>人人通.云教学平台</h4>
+                    <p>专注于教育信息化建设，提供专业、安全、易用的在线教学工具，助力教育现代化发展。</p>
+                </div>
+                <div class="footer-col">
+                    <h5>产品服务</h5>
+                    <ul>
+                        <li><a href="#">在线备课</a></li>
+                        <li><a href="#">智能作业</a></li>
+                        <li><a href="#">家校互联</a></li>
+                        <li><a href="#">资源中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>解决方案</h5>
+                    <ul>
+                        <li><a href="#">智慧校园</a></li>
+                        <li><a href="#">远程教学</a></li>
+                        <li><a href="#">电子书包</a></li>
+                        <li><a href="#">数字校园</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>联系我们</h5>
+                    <ul>
+                        <li>电话：400-888-9999</li>
+                        <li>邮箱：support@renrentong.com</li>
+                        <li>地址：教育科技园区A座</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 人人通.云教学平台 版权所有 | 仅供演示用途</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ accordion logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                              </html>
