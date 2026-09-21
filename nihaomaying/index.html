@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="你好吗英文 - 专业的英语问候语学习与交流平台。提供 Hello, How are you 等常用口语表达、发音指南、文化背景及跨语言沟通技巧。">
+    <meta name="keywords" content="你好吗英文, 英语问候语, How are you, 英语口语, 跨文化沟通">
+    <title>你好吗英文 - 英语问候语学习与跨文化沟通指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --success: #10b981;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .cta-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .visual-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            width: 280px;
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+
+        .visual-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .phonetic {
+            font-family: "Lucida Console", Monaco, monospace;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .example {
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 60px 0;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        /* Levels Grid */
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .level-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .level-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .level-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .badge-easy { background-color: #dcfce7; color: #166534; }
+        .badge-medium { background-color: #fef9c3; color: #854d0e; }
+        .badge-hard { background-color: #fee2e2; color: #991b1b; }
+
+        .level-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .level-card ul {
+            margin-top: 15px;
+        }
+
+        .level-card li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .level-card li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .context-list li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .context-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .context-label {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .context-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            background: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            line-height: 1.7;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .visual-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <a href="#" class="logo">
+            <span style="font-size: 1.8rem;">👋</span>
+            <span>你好吗英文</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#expressions">常用表达</a></li>
+                <li><a href="#levels">分级学习</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="cta-btn">开始练习</a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>掌握<span class="highlight">你好吗英文</span>，开启自信沟通</h1>
+            <p>从基础问候到地道口语，了解在不同场合下如何得体地表达 "How are you"。不仅仅是 Hello，更是跨文化社交的第一步。</p>
+            
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <h3>基础问候</h3>
+                    <span class="phonetic">/həˈloʊ/</span>
+                    <p>最通用的打招呼方式，适用于任何场合，包括陌生人。</p>
+                </div>
+                <div class="visual-card">
+                    <h3>日常询问</h3>
+                    <span class="phonetic">/haʊ ɑːr juː/</span>
+                    <p>询问对方近况。回答通常用 "I'm fine, thanks"。</p>
+                </div>
+                <div class="visual-card">
+                    <h3>正式场合</h3>
+                    <span class="phonetic">/haʊ ɑːr jʊ/</span>
+                    <p>更礼貌的询问方式，通常用于商务或正式社交。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container content-grid">
+        <!-- Main Content -->
+        <article>
+            <div id="expressions" class="section-header">
+                <h2>核心表达与用法</h2>
+                <p>了解这些短语背后的文化含义，避免尴尬。</p>
+            </div>
+
+            <section>
+                <h3 style="margin-bottom: 20px;">1. How Are You? (你好吗？)</h3>
+                <p style="color: var(--text-light); margin-bottom: 15px;">
+                    这是最常见的询问方式，相当于中文的“你好吗？”。在英语国家，这通常被视为一种社交润滑剂，而不是真正询问对方身体状况的深度问题。
+                </p>
+                <div style="background: #f1f5f9; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <strong>回答建议：</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>标准回答：</strong> "I'm fine, thank you. And you?"</li>
+                        <li><strong>朋友间：</strong> "I'm good, thanks!"</li>
+                        <li><strong>不想多说：</strong> "Pretty good, just busy."</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3 style="margin-bottom: 20px;">2. How's it going? (最近怎么样？)</h3>
+                <p style="color: var(--text-light); margin-bottom: 15px;">
+                    这种说法比 "How are you" 更随意、更口语化。它暗示了想要了解对方最近的生活状态或心情。
+                </p>
+                <div style="background: #f1f5f9; padding: 15px; border-radius: 8px;">
+                    <strong>回答建议：</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>"Not bad, just working on a project."</li>
+                        <li>"Can't complain."</li>
+                        <li>"Great!"</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-widget">
+                <h3>使用场景指南</h3>
+                <ul class="context-list">
+                    <li>
+                        <span class="context-label">初次见面</span>
+                        <span class="context-desc">使用 "Hello, I'm [Name]. Nice to meet you."</span>
+                    </li>
+                    <li>
+                        <span class="context-label">工作场合</span>
+                        <span class="context-desc">使用 "Good morning. How have you been?"</span>
+                    </li>
+                    <li>
+                        <span class="context-label">偶遇老友</span>
+                        <span class="context-desc">使用 "Hey! Long time no see. How have you been?"</span>
+                    </li>
+                    <li>
+                        <span class="context-label">电话/视频</span>
+                        <span class="context-desc">直接说 "Hi there, how are you doing today?"</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>常见误区</h3>
+                <ul class="context-list">
+                    <li>
+                        <span class="context-label">不要只说 "Fine"</span>
+                        <span class="context-desc">在英语中，只说 "Fine" 会被视为冷漠或不想交谈。</span>
+                    </li>
+                    <li>
+                        <span class="context-label">不要过度解释</span>
+                        <span class="context-desc">对于陌生人，回答 "I'm fine" 就足够了，不需要详细讲述你的生活。</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Levels Section -->
+    <div class="container">
+        <div id="levels" class="section-header">
+            <h2>分级学习指南</h2>
+            <p>根据你的英语水平选择合适的表达方式。</p>
+        </div>
+
+        <div class="levels-grid">
+            <div class="level-card">
+                <span class="level-badge badge-easy">入门级</span>
+                <h3>基础问候</h3>
+                <p>掌握最核心的打招呼用语，适合零基础学习者。</p>
+                <ul>
+                    <li>Hello / Hi</li>
+                    <li>Good morning / afternoon</li>
+                    <li>How do you do? (非常正式)</li>
+                </ul>
+            </div>
+
+            <div class="level-card">
+                <span class="level-badge badge-medium">进阶级</span>
+                <h3>日常闲聊</h3>
+                <p>学会如何回答 "How are you" 并开启话题。</p>
+                <ul>
+                    <li>I'm doing well, thanks.</li>
+                    <li>Not too bad.</li>
+                    <li>How about you?</li>
+                </ul>
+            </div>
+
+            <div class="level-card">
+                <span class="level-badge badge-hard">高阶级</span>
+                <h3>地道表达</h3>
+                <p>使用俚语和习语，让对话听起来更自然。</p>
+                <ul>
+                    <li>What's up? (What's happening?)</li>
+                    <li>How have you been?</li>
+                    <li>Long time no see.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div id="faq" class="container faq-container">
+        <div class="section-header" style="text-align: center;">
+            <h2>常见问题解答</h2>
+            <p>关于英语问候语，你可能还有这些疑问。</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">"How are you" 是真的在问我的身体吗？</div>
+            <div class="faq-answer">通常情况下不是。这是一种社交客套话，就像中文的“吃了吗”。除非对方非常亲密或你察觉到对方情绪低落，否则不需要详细回答身体状况。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">什么时候应该回答 "I'm fine"？</div>
+            <div class="faq-answer">在商务场合、面对不熟悉的同事或长辈时，"I'm fine, thank you" 是最安全、最得体的标准回答。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I answer "I'm good" to a boss?</div>
+            <div class="faq-answer">可以，但在非常正式的商务会议或初次见面的场合，"I'm doing well" 或 "I'm very well, thank you" 会显得稍微更专业和尊重一些。</div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>你好吗英文</h2>
+                <p>致力于提供最实用、最地道的英语问候语学习资源。帮助您在跨文化沟通中自信表达。</p>
+            </div>
+            <div class="footer-col">
+                <h4>学习资源</h4>
+                <ul>
+                    <li><a href="#">发音指南</a></li>
+                    <li><a href="#">常用短语</a></li>
+                    <li><a href="#">场景模拟</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">团队介绍</a></li>
+                    <li><a href="#">使用条款</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系</h4>
+                <ul>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 你好吗英文学习平台. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Accordion Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
